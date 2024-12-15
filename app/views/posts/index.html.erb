@@ -1,0 +1,10 @@
+<h1>口コミ一覧</h1>
+<%= @post.each do |post| %>
+  <div>
+    <p>タイトル：<%= post.title %></p>
+    <p>感想：<%= post.body %></p>
+    <%= image_tag post.get_image %>
+    <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
+    <p>ユーザーネーム：<%= post.user.name %></p>
+  </div>
+<% end %>
