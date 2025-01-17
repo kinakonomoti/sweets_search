@@ -1,5 +1,5 @@
 <h1>口コミ一覧</h1>
-<%= @posts.each do |post| %>
+<% @posts.each do |post| %>
   <div>
   <%= link_to post_path(post.id) do %>
     <%= image_tag post.get_image %>
@@ -10,5 +10,6 @@
     <p>感想：<%= post.body %></p>
     <%= image_tag post.get_image %>
     <p>ユーザーネーム：<%= post.user.name %></p>
+    <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
   </div>
 <% end %>

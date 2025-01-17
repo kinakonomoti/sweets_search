@@ -17,5 +17,6 @@
   <p>感想：<%= post.body %></p>
   <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
   <p>ユーザーネーム：<%= post.user.name %></p>
+  <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
 </div>
 <% end %>
