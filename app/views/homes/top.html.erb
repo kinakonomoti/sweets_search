@@ -1,25 +1,39 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 mx-auto">
-      <h1>welcome to <i class="fa-solid fa-book"></i> <strong>Bookers </strong>!!</h1>
-      <p>In <i class="fa-solid fa-book"></i> <strong> Bookers</strong>,</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Title</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .custom-font {
+      font-family: 'Caveat', cursive;
+      font-size: 100px;
+    }
+  </style>
+</head>
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+    h1.custom-font {
+      font-family: 'Caveat', cursive; 
+    }
+  </style>
 
-      <p>you can share and exchange your opinions , inpressions , and emotions</p>
+  <div class="signup-wrapper" style="display: flex; height: 500px;"> 
+    <div class="signup-image" style="flex: 1; background-image: url('<%= asset_path('HAWKSHAW19206003.jpg') %>'); background-size: cover; background-position: center;"></div>
+    
+    <div class="signup-content" style="flex: 1; padding: 2rem; text-align: center;"> 
+      <div class="mb-5">
+        <h1 class="custom-font">Sweets Search</h1>
+      </div>
 
-      <p>about various books!</p>
+      <div class="btn btn-info col-6 mb-5"> 
+        <%= link_to 'ログイン', new_user_session_path, class: "text-light"%>
+      </div>
 
-      <div class="col-10 mx-auto">
-        <div class="row">
-          <div class="btn btn-info btn-block mb-3">
-            <%= link_to 'Log in', new_user_session_path, class: "text-light"%>
-          </div>
-        </div>
-          <div class="row">
-            <div class="btn btn-success btn-block">
-              <%= link_to 'Sign up', new_user_registration_path, class: "text-light" %>
-            </div>
-          </div>
-        </div>
+      <div class="btn btn-success col-6"> 
+        <%= link_to '新規登録', new_user_registration_path, class: "text-light" %>
       </div>
     </div>
   </div>
+</body>
+</html>
