@@ -9,21 +9,5 @@
   <% end %>
 <% end %>
 
-<h1>口コミ一覧</h1>
-<div class="card-list-container py-5">
-<% @posts.each do |post| %>
-  <div>
-  <%= link_to post_path(post.id) do %>
-    <%= image_tag post.get_image %>
-  <% end %>
-  
-    <p>投稿ユーザー画像：<%= image_tag  post.user.get_profile_image(100,100) %></p>
-    <p>タイトル：<%= post.title %></p>
-    <p>感想：<%= post.body %></p>
-    <%= image_tag post.get_image %>
-    <p>ユーザーネーム：<%= post.user.name %></p>
-    <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
-  </div>
-
-  
-<% end %>
+<h1>投稿一覧</h1>
+<%= render 'list', posts: @posts %>

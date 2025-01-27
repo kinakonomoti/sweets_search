@@ -24,7 +24,7 @@
           
           <% if user_signed_in? %>
            <li class="nav-item">
-              <%= link_to "ホーム", user_path(current_user), class: "nav-link text-dark"%>
+              <%= link_to "ホーム", new_user_session_path, class: "nav-link text-dark"%>
             </li>
             <li class="nav-item">
               <%= link_to '投稿画面', new_post_path, class: 'nav-link text-dark' %>
