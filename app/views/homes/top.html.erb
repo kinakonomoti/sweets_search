@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Your Title</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .custom-font {
-      font-family: 'Caveat', cursive;
-      font-size: 100px;
-    }
-  </style>
-</head>
-<body>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
-    h1.custom-font {
-      font-family: 'Caveat', cursive; 
-    }
-  </style>
+  <head>
+    <title>Your Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .custom-font {
+        font-family: 'Caveat', cursive;
+        font-size: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+      h1.custom-font {
+        font-family: 'Caveat', cursive; 
+      }
+    </style>
 
-  <div class="signup-wrapper" style="display: flex; height: 500px;"> 
-    <div class="signup-image" style="flex: 1; background-image: url('<%= asset_path('HAWKSHAW19206003.jpg') %>'); background-size: cover; background-position: center;"></div>
-    
-    <div class="signup-content" style="flex: 1; padding: 2rem; text-align: center;"> 
-      <div class="mb-5">
-        <h1 class="custom-font">Sweets Search</h1>
-      </div>
+    <div class="signup-wrapper" style="display: flex; height: 900px;"> 
+      <div class="signup-image" style="flex: 1; background-image: url('<%= asset_path('HAWKSHAW19206003.jpg') %>'); background-size: cover; background-position: center;margin-top: 0;"></div>
+      
+      <div class="signup-content" style="flex: 1; padding: 2rem; text-align: center; margin-top: 0;"> 
+        <div class="mb-5">
+          <h1 class="custom-font">Sweets Search</h1>
+        </div>
 
-      <div class="btn btn-info col-6 mb-5"> 
-        <%= link_to 'ログイン', new_user_session_path, class: "text-light"%>
-      </div>
+        <div class="btn btn-info col-6 mb-5"> 
+          <%= link_to 'ログイン', new_user_session_path, class: "text-light"%>
+        </div>
 
-      <div class="btn btn-success col-6"> 
-        <%= link_to '新規登録', new_user_registration_path, class: "text-light" %>
+        <div class="btn btn-success col-6  mb-5"> 
+          <%= link_to '新規登録', new_user_registration_path, class: "text-light" %>
+        </div>
+
+        <div class="btn btn-secondary s col-6 mb-5 sign_in"> 
+          <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "text-light", method: :post %>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

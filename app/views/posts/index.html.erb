@@ -1,3 +1,14 @@
+<% @posts.each do |post| %>
+  <% if post.errors.any? %>
+    <h3><%= post.errors.count %> errors prohibited this post from being saved:</h3>
+    <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
 <h1>口コミ一覧</h1>
 <div class="card-list-container py-5">
 <% @posts.each do |post| %>

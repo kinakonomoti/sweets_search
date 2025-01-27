@@ -23,16 +23,22 @@
           <ul class="navbar-nav ml-auto">
           
           <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to '口コミ投稿', new_post_path, class: 'nav-link text-dark' %>
+           <li class="nav-item">
+              <%= link_to "ホーム", user_path(current_user), class: "nav-link text-dark"%>
             </li>
             <li class="nav-item">
-              <%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-dark'  %>
+              <%= link_to '投稿画面', new_post_path, class: 'nav-link text-dark' %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark'  %>
+              <%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
             </li>
           <% else %>
+            <li class="nav-item">
+              <%= link_to "ホーム", root_path, class: "nav-link text-dark"%>
+            </li>
             <li class="nav-item">
               <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-dark'  %>
             </li>
@@ -45,8 +51,22 @@
         </div>
       </nav>
     </header>
-    <main class="mb-auto">
+      <main class = "mt-4">
+      <% flash.each do |message_type, message| %>
+        <p class = "pb-1"><%= message %></p>
+      <% end %>
       <%= yield %>
     </main>
+
+
+    <footer class="bg-dark text-white">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
