@@ -8,7 +8,6 @@
             <h4><%= @user.name %></h4>
             <%= image_tag @user.get_profile_image(100,100) %>
             <% if @user.id == current_user.id %>
-              <p><%= link_to "マイページ編集", edit_user_path(@user), class: "text-light" %></p>
             <% end %>
           </div>
           <div class="btn btn-success col-6 mb-3">
